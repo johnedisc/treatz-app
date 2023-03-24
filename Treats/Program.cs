@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Treats.Models;
+using TreatsApp.Models;
 using Microsoft.AspNetCore.Identity;
 
-namespace Treats
+namespace TreatsApp
 {
   class Program
   {
@@ -15,7 +15,7 @@ namespace Treats
 
       builder.Services.AddControllersWithViews();
 
-      builder.Services.AddDbContext<TreatsContext>(
+      builder.Services.AddDbContext<TreatsAppContext>(
                         dbContextOptions => dbContextOptions
                           .UseMySql(
                             builder.Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(builder.Configuration["ConnectionStrings:DefaultConnection"]
@@ -24,7 +24,7 @@ namespace Treats
                       );
       
       builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<TreatsContext>()
+                .AddEntityFrameworkStores<TreatsAppContext>()
                 .AddDefaultTokenProviders();
 
        builder.Services.Configure<IdentityOptions>(options =>

@@ -1,19 +1,19 @@
 using Microsoft.AspNetCore.Mvc;
-using Treats.Models;
+using TreatsAppApp.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
 using System.Security.Claims;
 
-namespace Treats.Controllers
+namespace TreatsAppApp.Controllers
 {
     public class HomeController : Controller
     {
-      private readonly TreatsContext _db;
+      private readonly TreatsAppAppContext _db;
       private readonly UserManager<ApplicationUser> _userManager;
 
-      public HomeController(UserManager<ApplicationUser> userManager, TreatsContext db)
+      public HomeController(UserManager<ApplicationUser> userManager, TreatsAppAppContext db)
       {
         _userManager = userManager;
         _db = db;

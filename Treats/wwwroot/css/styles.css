@@ -1,7 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
 
 :root {
   --foot-height: 30vh;
   --div-height: 10vh;
+}
+
+body {
+  font-family: font-family: 'Cutive Mono', monospace;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 35vh 0vh;
+  background-color: black;
+  color: white;
 }
 
 p {
@@ -27,16 +39,6 @@ p {
   max-height: var(--foot-height);
 }
 
-
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 35vh 0vh;
-  background-color: black;
-  color: white;
-}
 
 div.content {
   display: flex;
