@@ -6,7 +6,6 @@
 
 <h1>treatz by pierre.</h1>
 
-<hr>
 
 @if (User.Identity.IsAuthenticated)
 {
@@ -30,8 +29,8 @@ else
 
 <hr>
 
-<p>@Html.ActionLink("Manage treats", "Index", "Treats")</p> 
-<p>@Html.ActionLink("Manage categories", "Index", "Categories")</p>
-<p>@Html.ActionLink("Manage tags", "Index", "Tags")</p>
-<p>@Html.ActionLink("Create or manage an account", "Index", "Account")</p>
+<p>@Html.ActionLink("treats", "Index", "Treats")</p> 
+<p>@Html.ActionLink("categories", "Index", "Categories")</p>
+<p>@Html.ActionLink("flavors", "Index", "Tags")</p>
+<p>@Html.ActionLink("create or manage an account", "Index", "Account")</p>
 

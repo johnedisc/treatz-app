@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using TreatsApp.Models;
-using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -30,14 +29,18 @@ namespace TreatsApp.Controllers
       return View(thisFlavor);
     }
 
-    public ActionResult Create()
+    public ActionResult Create(int id)
     {
-      return View();
+      return View(id);
     }
 
     [HttpPost]
-    public ActionResult Create(Flavor flavor)
+    public ActionResult Create(Flavor flavor, id treatId)
     {
+      if (id > 0)
+      {
+        return RedirectToAction("AddFlavor","Treats",new { Id = treatId })
+      }
       _db.Flavors.Add(flavor);
       _db.SaveChanges();
       return RedirectToAction("Index");

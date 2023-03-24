@@ -3,6 +3,10 @@
 :root {
   --foot-height: 30vh;
   --div-height: 10vh;
+  --base-font: white;
+  --base-background: black;
+  --base-font-size: 4rem;
+  --base-weight: 700;
 }
 
 body,
@@ -10,23 +14,26 @@ html {
   margin: 0px;
   padding: 0px;
   height: 100%;
+  font-family: 'Cutive Mono', monospace;
+  background: var(--base-background);
+  font-size: calc(var(--base-font-size)/4);
+  font-weight: var(--base-weight);
+  color: var(--base-font);
+  z-index: -1;
 }
 
 .box {
-  background: salmon;
-  height: 100vh;
-}
-
-body {
-  font-family: 'Cutive Mono', monospace;
+  position:absolute;
+  top:0px;
+  right:0px;
+  bottom:0px;
+  left:0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 35vh 0vh;
-  background-color: black;
-  color: white;
 }
+
 
 p {
   display: flex;

@@ -8,6 +8,7 @@
 
 @using (Html.BeginForm())
 {
+    @Html.Hidden("treatId",@Model);
     @Html.LabelFor(model => model.Name)
     @Html.TextBoxFor(model => model.Name)
 
