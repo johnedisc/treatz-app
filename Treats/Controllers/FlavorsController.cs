@@ -23,6 +23,7 @@ namespace TreatsApp.Controllers
       return View(_db.Flavors.ToList());
     }
 
+    [AllowAnonymous]
     public ActionResult Details(int id)
     {
       Flavor thisFlavor = _db.Flavors

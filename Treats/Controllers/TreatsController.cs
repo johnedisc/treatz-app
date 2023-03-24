@@ -23,13 +23,9 @@ namespace TreatsApp.Controllers
       _db = db;
     }
 
-    [AllowAnonymous]
     public async Task<ActionResult> Index()
     {
       string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-      if (userId == null)
-      {
-      }
       ApplicationUser currentUser = await _userManager.FindByIdAsync(userId);
       List<Treat> userTreats = _db.Treats
                           .Where(entry => entry.User.Id == currentUser.Id)
@@ -60,7 +56,6 @@ namespace TreatsApp.Controllers
       }
     }
 
-    [AllowAnonymous]
     public ActionResult Details(int id)
     {
       Treat thisTreat = _db.Treats
