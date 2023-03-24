@@ -1,18 +1,18 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
-using ToDoList.Models;
+using TreatsApp.Models;
 using System.Threading.Tasks;
-using ToDoList.ViewModels;
+using TreatsApp.ViewModels;
 
-namespace ToDoList.Controllers
+namespace TreatsApp.Controllers
 {
   public class AccountController : Controller
   {
-    private readonly ToDoListContext _db;
+    private readonly TreatsAppContext _db;
     private readonly UserManager<ApplicationUser> _userManager;
     private readonly SignInManager<ApplicationUser> _signInManager;
 
-    public AccountController (UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ToDoListContext db)
+    public AccountController (UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, TreatsAppContext db)
     {
       _userManager = userManager;
       _signInManager = signInManager;
