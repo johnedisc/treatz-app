@@ -5,8 +5,20 @@
   --div-height: 10vh;
 }
 
+body,
+html {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+}
+
+.box {
+  background: salmon;
+  height: 100vh;
+}
+
 body {
-  font-family: font-family: 'Cutive Mono', monospace;
+  font-family: 'Cutive Mono', monospace;
   display: flex;
   flex-direction: column;
   justify-content: center;
