@@ -1,0 +1,67 @@
+
+:root {
+  --foot-height: 30vh;
+  --div-height: 10vh;
+}
+
+p {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  size: 1.2em;
+}
+
+#footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+	position:fixed;
+	bottom:0px;
+	left:0px;
+	width:100%;
+	color:#CCC;
+	background:#333;
+  max-height: var(--foot-height);
+}
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 35vh 0vh;
+  background-color: black;
+  color: white;
+}
+
+div.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: calc(2*var(--div-height));
+  min-height: calc(2*var(--div-height));
+  background: #550081;
+  margin: 1em;
+  padding: 1em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form > * {
+  margin: .5em 0;
+}
+
+:link,:visited {
+  text-decoration: none;
+  color: #FEAFA2;
+}
