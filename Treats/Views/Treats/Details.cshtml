@@ -18,12 +18,12 @@ else
 {
   <h4>This treat has the following flavors:</h4>
   <ul>
-    @foreach(TreatFlavor join in Model.JoinEntities)
+    @foreach(Treat_Flavor join in Model.JoinEntities)
     {
       <li>Tag: @join.Flavor.Name</li>
       @using (Html.BeginForm("DeleteJoin", "Treats"))
       {
-        @Html.Hidden("joinId", @join.TreatFlavorId)
+        @Html.Hidden("joinId", @join.Treat_FlavorId)
         <input type="submit" value="Delete"/>
       }
     }

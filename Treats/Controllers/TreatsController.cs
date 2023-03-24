@@ -29,7 +29,6 @@ namespace TreatsApp.Controllers
       ApplicationUser currentUser = await _userManager.FindByIdAsync(userId);
       List<Treat> userTreats = _db.Treats
                           .Where(entry => entry.User.Id == currentUser.Id)
-                          .Include(treat => treat.Category)
                           .ToList();
       return View(userTreats);
     }
@@ -60,7 +59,6 @@ namespace TreatsApp.Controllers
     public ActionResult Details(int id)
     {
       Treat thisTreat = _db.Treats
-          .Include(treat => treat.Category)
           .Include(treat => treat.JoinEntities)
           .ThenInclude(join => join.Flavor)
           .FirstOrDefault(treat => treat.TreatId == id);
@@ -120,7 +118,7 @@ namespace TreatsApp.Controllers
     [HttpPost]
     public ActionResult DeleteJoin(int joinId)
     {
-      Treat_Flavor joinEntry = _db.Treat_Flavors.FirstOrDefault(entry => entry.TreatFlavorId == joinId);
+      Treat_Flavor joinEntry = _db.Treat_Flavors.FirstOrDefault(entry => entry.Treat_FlavorId == joinId);
       _db.Treat_Flavors.Remove(joinEntry);
       _db.SaveChanges();
       return RedirectToAction("Index");
