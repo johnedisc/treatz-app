@@ -29,17 +29,18 @@ namespace TreatsApp.Controllers
       return View(thisFlavor);
     }
 
-    public ActionResult Create(int id)
+    public ActionResult Create(int TreatId)
     {
-      return View(id);
+      ViewBag.TreatId = TreatId;
+      return View();
     }
 
     [HttpPost]
-    public ActionResult Create(Flavor flavor, id treatId)
+    public ActionResult Create(Flavor flavor, int treatId)
     {
-      if (id > 0)
+      if (treatId > 0)
       {
-        return RedirectToAction("AddFlavor","Treats",new { Id = treatId })
+        return RedirectToAction("AddFlavor","Treats",new { Id = treatId });
       }
       _db.Flavors.Add(flavor);
       _db.SaveChanges();
