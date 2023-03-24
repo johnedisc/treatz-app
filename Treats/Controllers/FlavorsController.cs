@@ -3,9 +3,11 @@ using TreatsApp.Models;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TreatsApp.Controllers
 {
+  [Authorize]
   public class FlavorsController : Controller
   {
     private readonly TreatsAppContext _db;
@@ -15,6 +17,7 @@ namespace TreatsApp.Controllers
       _db = db;
     }
 
+    [AllowAnonymous]
     public ActionResult Index()
     {
       return View(_db.Flavors.ToList());

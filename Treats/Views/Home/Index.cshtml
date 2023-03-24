@@ -14,12 +14,10 @@
   {
     <p>No treats have been added yet!</p>
   } 
-  <ul>
     @foreach (Treat treat in Model)
     {
-      <li>@Html.ActionLink(@treat.Description, "Details", "Treats", new { id = @treat.TreatId})</li>
+        @Html.ActionLink(@treat.Name, "Details", "Treats", new { id = @treat.TreatId})
     }
-  </ul>
 }
 else
 {
@@ -27,10 +25,8 @@ else
   <p>Please @Html.ActionLink("log in", "LogIn", "Account") to view or manage your treats.</p>
 }
 
-<hr>
 
 <p>@Html.ActionLink("treats", "Index", "Treats")</p> 
-<p>@Html.ActionLink("categories", "Index", "Categories")</p>
-<p>@Html.ActionLink("flavors", "Index", "Tags")</p>
+<p>@Html.ActionLink("flavors", "Index", "Flavors")</p>
 <p>@Html.ActionLink("create or manage an account", "Index", "Account")</p>
 

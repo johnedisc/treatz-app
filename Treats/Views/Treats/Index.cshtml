@@ -4,21 +4,40 @@
 
 @using TreatsApp.Models;
 
-<h1>Items for @User.Identity.Name</h1>
-
 @if (@Model.Count == 0)
 {
   <h3>No treats have been added yet!</h3>
-} 
+}
 else
 {
-  <ul>
-    @foreach (Treat treat in Model)
+  if (User.Identity.Name != Null)
+  {
+    if (@Model.user.Count == 0)
     {
-      <li>@Html.ActionLink($"{treat.Name}", "Details", new { id = treat.TreatId })</li>
+
+      <h3>@User.Identity.Name, you havent added treats yet.</h3>
     }
-  </ul>
+    else
+    {
+      <h1>Items for @User.Identity.Name</h1>
+
+      @foreach (Treat treat in Model.user)
+      {
+        @Html.ActionLink($"{treat.Name}", "Details", new { id = treat.TreatId })
+      }
+    }
+  }
+
+  @foreach (Treat treat in Model.all)
+  {
+    @Html.ActionLink($"{treat.Name}", "Details", new { id = treat.TreatId })
+  }
+  
 }
+
+
+
+
 
 <p>@Html.ActionLink("Add new item", "Create")</p>
 <p>@Html.ActionLink("Home", "Index", "Home")</p>
