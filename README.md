@@ -50,9 +50,8 @@ dotnet tool install --global dotnet-ef --version 6.0.0
 ```bash
 dotnet ef database update
 ```
-* go back to the project directory and run the application
+* run the application
 ```bash
-pushd
 dotnet watch run
 ```
 
