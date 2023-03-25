@@ -1,6 +1,6 @@
 
 
-# [order_buddy](https://github.com/johnedisc/order-buddy.git)
+# [treatz-app](https://github.com/johnedisc/treatz-app)
 
 #### by [johnedisc](https://johnedisc.github.io/portfolio/)
 
