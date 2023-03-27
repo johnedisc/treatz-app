@@ -3,6 +3,7 @@ using TreatsApp.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 using System.Threading.Tasks;
 using System.Security.Claims;
 
@@ -19,6 +20,15 @@ namespace TreatsAppApp.Controllers
         _db = db;
       }
 
+      [Authorize(Roles="Administrator")]
+      public ActionResult Admin()
+      {
+        List<Treat> allTreats = _db.Treats.ToList();
+        List<Flavor> allFlavors = _db.Flavors.ToList();
+
+        return View(new { treats = allTreats, flavors = allFlavors });
+      }
+
       [HttpGet("/")]
       public async Task<ActionResult> Index()
       {
@@ -33,7 +43,6 @@ namespace TreatsAppApp.Controllers
         }
         return View();
       }
-
 
     }
 }

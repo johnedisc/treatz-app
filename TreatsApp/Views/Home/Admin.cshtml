@@ -1,0 +1,38 @@
+@{
+  Layout = "_Layout";
+}
+
+@using TreatsApp.Models;
+
+@if (Model.treats.Count == 0)
+{
+  <div>
+    no treats to see here.
+  </div>
+}
+else
+{
+    @foreach(Treat treat in Model.Treats)
+    {
+      <div>
+        Treat: @treat
+      </div>
+    }
+}
+
+@if (Model.flavors.Count == 0)
+{
+  <div>
+    no flavors to see here.
+  </div>
+}
+else
+{
+    @foreach(Flavor flavor in Model.Flavors)
+    {
+      <div>
+        Flavor: @flavor
+      </div>
+    }
+}
+

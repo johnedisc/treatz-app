@@ -24,8 +24,8 @@ namespace TreatsApp
                       );
       
       builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<TreatsAppContext>()
-                .AddDefaultTokenProviders();
+        .AddEntityFrameworkStores<TreatsAppContext>()
+        .AddDefaultTokenProviders();
 
        builder.Services.Configure<IdentityOptions>(options =>
        {
