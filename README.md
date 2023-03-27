@@ -54,6 +54,7 @@ dotnet ef database update
 ```bash
 dotnet watch run
 ```
+* follow the instructions for creating an account with a fake e-mail and password
 
 ## known Bugs
 
